@@ -38,9 +38,7 @@ if __name__ == '__main__':
         if view_detection:
             for i in range(len(boxes)):
                 box = boxes[i]
-                score = scores[i]
-                if score > th_detection:
-                    cv2.rectangle(frame, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])),(255,255,0), 2)
+                cv2.rectangle(frame, (int(box[0]), int(box[1])), (int(box[2]), int(box[3])),(255,255,0), 2)
         
         cv2.imshow("Frame", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
